@@ -1,12 +1,7 @@
-// FUNCTION to test the outputs
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ ✅ ✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑 🛑 🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+//require assertEqual.js
+const assertEqual = require('./assertEqual');
 
+//implement contLetter to output an object with the amount of times each letter appears in a given sentence
 const countLetters = function(string) {
   const results = {};
   
@@ -23,8 +18,4 @@ const countLetters = function(string) {
   return results;
 };
 
-const test = countLetters("lighthouse in the house");
-
-assertEqual(test.g, 1);
-assertEqual(test.h, 4);
-assertEqual(test.e, 3);
+module.exports = countLetters;
